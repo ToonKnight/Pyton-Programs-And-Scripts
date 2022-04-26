@@ -1,15 +1,24 @@
+import random
+import names
+
 print('|---------------------------------|')
 print("|Welcome to my chariter generator |")
 print('|---------------------------------|')
 
-race_list = [Orc,Human,Elf]
+valid_genders = ["male", "female"]
+gender = None
+race_list = ['Orc','Human','Elf']
 
-gender = input('Please Pick your gender ')
+def ask_gender() -> str:
+  return str(input("Enter your Gender: ")).lower()
 
-if gender == "male" or "female":
-   race = input('Please pick a Race'+ str(race_list))
-   print  
-else:
-    print('Sorry there are only 2 genders')
+gender = ask_gender()
+while gender not in valid_genders:
+  print("Unknown gender, try again")
+  gender = ask_gender()
 
+print(f"You have chosen {gender}")
+ 
+names.get_full_name()
+print(' Hello '+ names.get_full_name(gender))
 

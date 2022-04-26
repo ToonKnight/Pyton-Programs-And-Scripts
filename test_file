@@ -1,0 +1,12 @@
+def ask_gender() -> str:
+  return str(input("Enter your Gender: ")).lower()
+
+valid_genders = ["male", "female"]
+gender = None
+
+gender = ask_gender()
+while gender not in valid_genders:
+  print("Unknown gender, try again")
+  gender = ask_gender()
+
+print(f"You have chosen {gender}")
